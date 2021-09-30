@@ -77,17 +77,14 @@ function format(num) {
     var h = 0
     var m = 0
     var s = 0
-    var number = 0
 
     h = num / 3600
-    number %= 3600
-    m = number / 60
-    number %= 60
-    s = number - 60
+    m = (num / 60) % 60
+    s = num % 60
     console.log(Math.floor(h) + ":" + Math.floor(m) + ":" + s)
 
 }
-format(4800)
+format(7200)
 console.log("")
 
 //Bonus
