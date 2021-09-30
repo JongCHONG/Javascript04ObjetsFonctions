@@ -77,16 +77,25 @@ function format(num) {
     var h = 0
     var m = 0
     var s = 0
+    var number = 0
 
     h = num / 3600
-    m = (num - 3600) / 60
-    if (num - 3600 != 0) {
-        s = num - 3600 - 60
-    }
+    number %= 3600
+    m = number / 60
+    number %= 60
+    s = number - 60
     console.log(Math.floor(h) + ":" + Math.floor(m) + ":" + s)
+
 }
 format(4800)
 console.log("")
 
 //Bonus
 
+function generatePassword(num) {
+    if (num < 6 || num > 15) {
+        console.log("Error")
+    } else {
+
+    }
+}
