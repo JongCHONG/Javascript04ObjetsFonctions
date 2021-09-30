@@ -88,6 +88,7 @@ format(7200)
 console.log("")
 
 //Bonus
+console.log("Bonus")
 
 function generatePassword(num) {
     if (num < 6 || num > 15) {
@@ -96,3 +97,39 @@ function generatePassword(num) {
 
     }
 }
+console.log("")
+
+//Bonus II
+console.log("Bonus II \n")
+
+function launchDice(numberofDice) {
+    var i
+    var somme = 0
+    var random = 0
+    var min = 1
+    var max = 6
+    var result = 0
+
+    for (i = 1; i <= numberofDice; i++) {
+        random = Math.floor(Math.random() * (max - min + 1) + min)
+        // console.log(random)
+        somme = somme + random
+        result = result + " + " + random
+    }
+    console.log(result + ' = ' + somme)
+    return somme
+}
+
+var joueur1 = launchDice(5)
+var joueur2 = launchDice(5)
+
+if (joueur1 > joueur2) {
+    console.log(joueur1 + " ! Joueur 1 YOU WIN!")
+    console.log(joueur2 + " ! Joueur 2 YOU LOSE!")
+} else if (joueur1 < joueur2) {
+    console.log(joueur2 + " ! Joueur 2 YOU WIN!")
+    console.log(joueur1 + " ! Joueur 1 YOU LOSE!")
+} else {
+    console.log("Nobody win...")
+}
+
