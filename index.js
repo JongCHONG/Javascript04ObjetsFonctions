@@ -74,13 +74,19 @@ console.log("")
 console.log("06 - Time \n")
 
 function format(num) {
-    var h
-    var m
-    var s
+    var h = 0
+    var m = 0
+    var s = 0
 
     h = num / 3600
     m = (num - 3600) / 60
-    s = num - 3600 - 60
+    if (num - 3600 != 0) {
+        s = num - 3600 - 60
+    }
     console.log(Math.floor(h) + ":" + Math.floor(m) + ":" + s)
 }
-format(3700)
+format(4800)
+console.log("")
+
+//Bonus
+
