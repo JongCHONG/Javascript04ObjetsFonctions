@@ -88,15 +88,27 @@ format(7200)
 console.log("")
 
 //Bonus
-console.log("Bonus")
+console.log("Bonus \n")
 
 function generatePassword(num) {
+    var random = 0
+    var min = 65
+    var max = 90
+    var i
+    var mdp = ""
+
     if (num < 6 || num > 15) {
         console.log("Error")
     } else {
-
+        for (i = 0; i < num; i++) {
+            random = Math.floor(Math.random() * (max - min + 1) + min)
+            mdp = mdp + String.fromCharCode(random)
+            console.log(random)
+        }
+        console.log(mdp)
     }
 }
+generatePassword(6)
 console.log("")
 
 //Bonus II
@@ -114,7 +126,11 @@ function launchDice(numberofDice) {
         random = Math.floor(Math.random() * (max - min + 1) + min)
         // console.log(random)
         somme = somme + random
-        result = result + " + " + random
+        if (result == 0) {
+            result = random
+        } else {
+            result = result + " + " + random
+        }
     }
     console.log(result + ' = ' + somme)
     return somme
