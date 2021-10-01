@@ -7,6 +7,10 @@ var cat = {
 	isCute: true,
 }
 console.log(cat)
+console.log(cat.age)
+if (cat.isCute) {
+    console.log("So cute!")
+}
 console.log("")
 
 //02 - Combine
@@ -19,8 +23,8 @@ var cat2 = {
 }
 var cats = [cat, cat2]
 console.log(cats)
-console.log(cat.age)
-console.log(cat2["isCute"])
+console.log(cats[0].age)        //afficher à partir du tableau
+console.log(cats[1]["isCute"])  //afficher à partir du tableau
 console.log("")
 
 //03 - Even
@@ -91,24 +95,22 @@ console.log("")
 console.log("Bonus \n")
 
 function generatePassword(num) {
-    var random = 0
-    var min = 65
-    var max = 90
-    var i
-    var mdp = ""
-
+    
     if (num < 6 || num > 15) {
         console.log("Error")
     } else {
-        for (i = 0; i < num; i++) {
-            random = Math.floor(Math.random() * (max - min + 1) + min)
+        var min = 65
+        var max = 90
+        var mdp = ""
+        for (var i = 0; i < num; i++) {
+            var random = Math.floor(Math.random() * (max - min + 1) + min)
             mdp = mdp + String.fromCharCode(random)
             console.log(random)
         }
         console.log(mdp)
     }
 }
-generatePassword(6)
+generatePassword(15)
 console.log("")
 
 //Bonus II
